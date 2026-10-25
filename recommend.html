@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get movie recommendations based on genre, age group and viewing preference.">
+    <title>Recommendations - CineHub</title>
+    <!-- External stylesheet shared by every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Single JavaScript file shared by every page -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Site header with logo and main navigation -->
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="CineHub logo: a film reel">
+                CineHub
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="recommend.html" class="active" aria-current="page">Recommendations</a></li>
+            <li><a href="watchlist.html">Watchlist</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="rec-title">
+            <h1 id="rec-title">Movie recommendations</h1>
+            <p class="lead">Answer three questions and we will suggest what to watch.</p>
+            <form id="recommendForm" novalidate>
+                <div class="field">
+                    <label for="genre">Preferred genre</label>
+                    <select id="genre" name="genre" required>
+                        <option value="">Choose a genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Drama">Drama</option>
+                    </select>
+                    <span class="error" id="genreError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="age">Age group</label>
+                    <select id="age" name="age" required>
+                        <option value="">Choose an age group</option>
+                        <option value="child">Child (under 12)</option>
+                        <option value="teen">Teen (12 to 17)</option>
+                        <option value="adult">Adult (18 and over)</option>
+                    </select>
+                    <span class="error" id="ageError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="viewing">Viewing preference</label>
+                    <select id="viewing" name="viewing" required>
+                        <option value="">Choose who you are watching with</option>
+                        <option value="family">Family</option>
+                        <option value="date">Date night</option>
+                        <option value="friends">Friends</option>
+                        <option value="solo">Solo</option>
+                    </select>
+                    <span class="error" id="viewingError" aria-live="polite"></span>
+                </div>
+                <button type="submit" class="btn">Show recommendations</button>
+            </form>
+        </section>
+
+        <!-- Results are written here by script.js -->
+        <section id="results" tabindex="-1" aria-live="polite"></section>
+    </main>
+
+    <!-- Site footer -->
+    <footer>
+        <p>&copy; 2026 CineHub. Student project for COS10005 Web Development, Swinburne University of Technology.</p>
+        <p><a href="movies.html">Browse movies</a> | <a href="booking.html">Book tickets</a></p>
+    </footer>
+</body>
+</html>

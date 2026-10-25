@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View and manage your saved movies.">
+    <title>Watchlist - CineHub</title>
+    <!-- External stylesheet shared by every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Single JavaScript file shared by every page -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Site header with logo and main navigation -->
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="CineHub logo: a film reel">
+                CineHub
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="recommend.html">Recommendations</a></li>
+            <li><a href="watchlist.html" class="active" aria-current="page">Watchlist</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="watch-title">
+            <h1 id="watch-title">My watchlist</h1>
+            <p class="lead">Movies you saved. Your list stays while you move between pages.</p>
+            <div id="watchlistItems" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer>
+        <p>&copy; 2026 CineHub. Student project for COS10005 Web Development, Swinburne University of Technology.</p>
+        <p><a href="movies.html">Browse movies</a> | <a href="booking.html">Book tickets</a></p>
+    </footer>
+</body>
+</html>

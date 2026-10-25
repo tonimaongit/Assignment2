@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Register for a CineHub account.">
+    <title>Register - CineHub</title>
+    <!-- External stylesheet shared by every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Single JavaScript file shared by every page -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Site header with logo and main navigation -->
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="CineHub logo: a film reel">
+                CineHub
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="recommend.html">Recommendations</a></li>
+            <li><a href="watchlist.html">Watchlist</a></li>
+            <li><a href="register.html" class="active" aria-current="page">Register</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="reg-title">
+            <h1 id="reg-title">Create an account</h1>
+            <p class="lead">Join CineHub to save your preferences. All fields are required.</p>
+            <form id="registerForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" autocomplete="username" required>
+                    <p class="hint">At least 5 characters: letters, numbers and underscores only.</p>
+                    <span class="error" id="usernameError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <span class="error" id="emailError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    <p class="hint">Digits only, 8 to 15 digits.</p>
+                    <span class="error" id="phoneError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" required>
+                    <p class="hint">At least 10 characters with uppercase, lowercase, a number and a special character.</p>
+                    <span class="error" id="passwordError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required>
+                    <span class="error" id="confirmPasswordError" aria-live="polite"></span>
+                </div>
+                <fieldset id="gender" class="inline">
+                    <legend>Gender</legend>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                    <span class="error" id="genderError" aria-live="polite"></span>
+                </fieldset>
+                <fieldset id="genres" class="inline">
+                    <legend>Preferred movie genre(s)</legend>
+                    <label><input type="checkbox" name="genres" value="Action"> Action</label>
+                    <label><input type="checkbox" name="genres" value="Comedy"> Comedy</label>
+                    <label><input type="checkbox" name="genres" value="Animation"> Animation</label>
+                    <label><input type="checkbox" name="genres" value="Drama"> Drama</label>
+                    <span class="error" id="genresError" aria-live="polite"></span>
+                </fieldset>
+                <div class="field">
+                    <label for="country">Country/Region</label>
+                    <select id="country" name="country" required>
+                        <option value="">Choose a country or region</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Canada">Canada</option>
+                    <option value="China">China</option>
+                    <option value="India">India</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Other">Other</option>
+                    </select>
+                    <span class="error" id="countryError" aria-live="polite"></span>
+                </div>
+                <button type="submit" class="btn">Create account</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer>
+        <p>&copy; 2026 CineHub. Student project for COS10005 Web Development, Swinburne University of Technology.</p>
+        <p><a href="movies.html">Browse movies</a> | <a href="booking.html">Book tickets</a></p>
+    </footer>
+</body>
+</html>

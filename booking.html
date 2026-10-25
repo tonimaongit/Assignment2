@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Book movie tickets at CineHub with voucher or online payment.">
+    <title>Book Tickets - CineHub</title>
+    <!-- External stylesheet shared by every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Single JavaScript file shared by every page -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Site header with logo and main navigation -->
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="CineHub logo: a film reel">
+                CineHub
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="recommend.html">Recommendations</a></li>
+            <li><a href="watchlist.html">Watchlist</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="booking.html" class="active" aria-current="page">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="book-title">
+            <h1 id="book-title">Book tickets</h1>
+            <p class="lead">Pick a movie, choose your session and pay by voucher or online. Use fake card details for testing.</p>
+            <form id="bookingForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <div class="field">
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+                    <span class="error" id="fullNameError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <span class="error" id="emailError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    <p class="hint">At least 10 digits.</p>
+                    <span class="error" id="phoneError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="movie">Movie selection</label>
+                    <select id="movie" name="movie" required>
+                        <option value="">Choose a movie</option>
+                    <option value="m1">Skyline Pursuit ($18.00)</option>
+                    <option value="m2">Laugh Lines ($16.00)</option>
+                    <option value="m3">Pip and the Paper Moon ($14.00)</option>
+                    <option value="m4">The Quiet Harbour ($17.00)</option>
+                    <option value="m5">Crimson Circuit ($19.00)</option>
+                    <option value="m6">Stargazers Club ($15.00)</option>
+                    </select>
+                    <p class="hint status" id="pricePerTicket" aria-live="polite"></p>
+                    <span class="error" id="movieError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="screening">Screening date and time</label>
+                    <input type="datetime-local" id="screening" name="screening" required>
+                    <p class="hint">Must not be in the past.</p>
+                    <span class="error" id="screeningError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="tickets">Number of tickets</label>
+                    <input type="number" id="tickets" name="tickets" value="1" min="1" step="1" required>
+                    <span class="error" id="ticketsError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="ticketType">Ticket type</label>
+                    <select id="ticketType" name="ticketType" required>
+                        <option value="adult">Adult (full price)</option>
+                        <option value="child">Child (60% of full price)</option>
+                        <option value="student">Student (80% of full price)</option>
+                    </select>
+                    <span class="error" id="ticketTypeError" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="requests">Special requests (optional)</label>
+                    <textarea id="requests" name="requests" rows="3"></textarea>
+                </div>
+                <div class="field">
+                    <label for="totalCost">Booking cost</label>
+                    <input type="text" id="totalCost" name="totalCost" class="total" value="$0.00" readonly>
+                </div>
+
+                <fieldset id="payment" class="inline">
+                    <legend>Payment method</legend>
+                    <label><input type="radio" name="payment" value="voucher"> Voucher</label>
+                    <label><input type="radio" name="payment" value="online"> Online payment</label>
+                    <span class="error" id="paymentError" aria-live="polite"></span>
+                </fieldset>
+
+                <!-- Shown only when Voucher is selected -->
+                <fieldset id="voucherFields" hidden disabled>
+                    <legend>Voucher details</legend>
+                    <label for="voucher">Voucher code</label>
+                    <input type="text" id="voucher" name="voucher" inputmode="numeric" maxlength="12">
+                    <p class="hint">12 digits.</p>
+                    <span class="error" id="voucherError" aria-live="polite"></span>
+                </fieldset>
+
+                <!-- Shown only when Online payment is selected -->
+                <fieldset id="cardFields" hidden disabled>
+                    <legend>Credit card details</legend>
+                    <div class="field">
+                        <label for="cardType">Card type</label>
+                        <select id="cardType" name="cardType">
+                            <option value="">Choose a card type</option>
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="amex">American Express</option>
+                        </select>
+                        <span class="error" id="cardTypeError" aria-live="polite"></span>
+                    </div>
+                    <div class="field">
+                        <label for="cardNumber">Card number</label>
+                        <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" maxlength="16" autocomplete="off">
+                        <p class="hint">Visa and Mastercard: 16 digits. Amex: 15 digits. Digits only.</p>
+                        <span class="error" id="cardNumberError" aria-live="polite"></span>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label for="billingEmail">Billing email address</label>
+                    <input type="email" id="billingEmail" name="billingEmail" required>
+                    <label class="inline-check"><input type="checkbox" id="sameEmail" name="sameEmail"> Same as email address</label>
+                    <span class="error" id="billingEmailError" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn">Confirm booking</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer>
+        <p>&copy; 2026 CineHub. Student project for COS10005 Web Development, Swinburne University of Technology.</p>
+        <p><a href="movies.html">Browse movies</a> | <a href="booking.html">Book tickets</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,374 @@
+/* ==========================================================
+   CineHub - style.css
+   COS10005 Assignment 2
+   Sections: 1 Variables | 2 Base | 3 Layout | 4 Header/Nav |
+             5 Components | 6 Forms | 7 Footer | 8 Responsive
+   ========================================================== */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --ink: #1a1530;       /* dark purple-black: header, footer, text on amber */
+  --violet: #4b2a7b;    /* primary brand colour */
+  --amber: #ffb938;     /* accent / buttons */
+  --paper: #f7f5fb;     /* page background */
+  --white: #ffffff;
+  --text: #1c1830;      /* body text (contrast 15:1 on paper) */
+  --muted: #4a4560;     /* secondary text (8:1 on paper) */
+  --error: #b00020;     /* error text (7:1 on white) */
+  --line: #cfc8e0;
+}
+
+/* ---------- 2. Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 1.125rem;       /* 18px readable base size */
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+h1 { font-size: 2.4rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.7rem; margin: 0 0 0.75rem; }
+h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+
+a { color: var(--violet); }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ---------- 3. Layout ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ---------- 4. Header and navigation ---------- */
+header {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+nav a:hover {
+  border-bottom-color: var(--line);
+}
+
+/* Current page highlighting */
+nav a.active {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+  font-weight: bold;
+}
+
+/* ---------- 5. Components ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero figure {
+  margin: 0;
+}
+
+.hero figcaption {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--amber);
+  color: var(--ink);
+  border: 2px solid var(--amber);
+  border-radius: 6px;
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--amber);
+}
+
+.btn.secondary {
+  background: var(--white);
+  color: var(--violet);
+  border-color: var(--violet);
+}
+
+.btn.secondary:hover {
+  background: var(--violet);
+  color: var(--white);
+}
+
+/* Movie cards */
+.movie {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--violet);
+  color: var(--white);
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.note {
+  background: #fff4d6;
+  border-left: 5px solid var(--amber);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+
+/* ---------- 6. Forms ---------- */
+form {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 720px;
+}
+
+.field {
+  margin-bottom: 1.1rem;
+}
+
+label,
+legend {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin: 0 0 1.1rem;
+  padding: 0.75rem 1rem;
+}
+
+.inline label {
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  border: 2px solid #7a7391;
+  border-radius: 6px;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: var(--error);
+}
+
+.error {
+  display: block;
+  min-height: 1.2em;
+  color: var(--error);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0.2rem 0 0;
+}
+
+.total {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.status {
+  color: var(--violet);
+  font-weight: bold;
+}
+
+/* ---------- 7. Footer ---------- */
+footer {
+  background: var(--ink);
+  color: var(--white);
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 1rem;
+}
+
+footer a {
+  color: var(--amber);
+}
+
+/* ---------- 8. Responsive design ---------- */
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 { font-size: 2.1rem; }
+}
+
+/* Mobile: 767px and below */
+@media (max-width: 767px) {
+  .grid,
+  .hero,
+  .movie {
+    grid-template-columns: 1fr;
+  }
+
+  .movie img {
+    max-width: 240px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.45rem; }
+}

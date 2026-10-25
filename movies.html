@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Browse movies showing at CineHub, with ratings, running times, prices and sessions.">
+    <title>Movies - CineHub</title>
+    <!-- External stylesheet shared by every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Single JavaScript file shared by every page -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Site header with logo and main navigation -->
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="CineHub logo: a film reel">
+                CineHub
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html" class="active" aria-current="page">Movies</a></li>
+            <li><a href="recommend.html">Recommendations</a></li>
+            <li><a href="watchlist.html">Watchlist</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="movies-title">
+            <h1 id="movies-title">Now showing</h1>
+            <p class="lead">Six movies this week. Prices are for one Adult ticket. Child and Student tickets are cheaper.</p>
+            <article class="movie" id="m1">
+                <img src="images/movie1.jpg" width="200" height="300" alt="Poster for Skyline Pursuit: a rooftop chase scene in a city at night">
+                <div>
+                    <h2>Skyline Pursuit</h2>
+                    <ul class="meta">
+                        <li>Genre: Action</li>
+                        <li>Age rating: <span class="badge">M</span></li>
+                        <li>Running time: 1 hr 58 min</li>
+                        <li>Ticket price: $18.00</li>
+                    </ul>
+                    <p>When a courier vanishes with a stolen city-grid key, ex-paramedic Mara Ellis has one night to chase her across rooftops, rail yards and a flooded tunnel network. Fast, loud and surprisingly warm, Skyline Pursuit trades gritty cynicism for big stunts, quick wit and a team of mismatched allies you will happily cheer for.</p>
+                    <p><strong>Sessions:</strong> Fri 7:30 PM, Sat 4:00 PM, Sun 6:30 PM</p>
+                    <div class="actions">
+                        <a class="btn" href="booking.html?movie=m1">Book Skyline Pursuit</a>
+                        <button type="button" class="btn secondary watch-btn" data-id="m1" aria-pressed="false">Add to watchlist</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie" id="m2">
+                <img src="images/movie2.jpg" width="200" height="300" alt="Poster for Laugh Lines: two wedding planners arguing beside a goose">
+                <div>
+                    <h2>Laugh Lines</h2>
+                    <ul class="meta">
+                        <li>Genre: Comedy</li>
+                        <li>Age rating: <span class="badge">PG</span></li>
+                        <li>Running time: 1 hr 42 min</li>
+                        <li>Ticket price: $16.00</li>
+                    </ul>
+                    <p>Two rival wedding planners are forced to share one venue, one budget and one extremely stubborn goose. As the guest list grows and the schedule collapses, Laugh Lines turns small disasters into a cheerful comedy about teamwork, second chances and the surprising joy of letting a plan fall apart. Perfect for a relaxed night out.</p>
+                    <p><strong>Sessions:</strong> Thu 6:45 PM, Sat 7:00 PM, Sun 2:00 PM</p>
+                    <div class="actions">
+                        <a class="btn" href="booking.html?movie=m2">Book Laugh Lines</a>
+                        <button type="button" class="btn secondary watch-btn" data-id="m2" aria-pressed="false">Add to watchlist</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie" id="m3">
+                <img src="images/movie3.jpg" width="200" height="300" alt="Poster for Pip and the Paper Moon: a paper lantern floating towards a large moon">
+                <div>
+                    <h2>Pip and the Paper Moon</h2>
+                    <ul class="meta">
+                        <li>Genre: Animation</li>
+                        <li>Age rating: <span class="badge">G</span></li>
+                        <li>Running time: 1 hr 34 min</li>
+                        <li>Ticket price: $14.00</li>
+                    </ul>
+                    <p>Pip is a small paper lantern who dreams of reaching the moon. Guided by a talkative owl and a sleepy cloud, Pip drifts across hand-painted skies and learns that courage is a glow you carry with you. Gentle, colourful and full of songs, this animated adventure is made for young viewers and families to enjoy together.</p>
+                    <p><strong>Sessions:</strong> Sat 10:30 AM, Sat 1:00 PM, Sun 11:00 AM</p>
+                    <div class="actions">
+                        <a class="btn" href="booking.html?movie=m3">Book Pip and the Paper Moon</a>
+                        <button type="button" class="btn secondary watch-btn" data-id="m3" aria-pressed="false">Add to watchlist</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie" id="m4">
+                <img src="images/movie4.jpg" width="200" height="300" alt="Poster for The Quiet Harbour: a small fishing boat in a calm harbour at dusk">
+                <div>
+                    <h2>The Quiet Harbour</h2>
+                    <ul class="meta">
+                        <li>Genre: Drama</li>
+                        <li>Age rating: <span class="badge">M</span></li>
+                        <li>Running time: 2 hr 6 min</li>
+                        <li>Ticket price: $17.00</li>
+                    </ul>
+                    <p>After her father's death, Nora returns to a quiet fishing town to sell the family boatshed. Old neighbours, unfinished letters and a long-held secret make leaving harder than she expected. The Quiet Harbour is a patient, beautifully acted drama about grief, forgiveness and finding a place where you finally belong.</p>
+                    <p><strong>Sessions:</strong> Fri 8:00 PM, Sat 5:30 PM, Sun 4:00 PM</p>
+                    <div class="actions">
+                        <a class="btn" href="booking.html?movie=m4">Book The Quiet Harbour</a>
+                        <button type="button" class="btn secondary watch-btn" data-id="m4" aria-pressed="false">Add to watchlist</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie" id="m5">
+                <img src="images/movie5.jpg" width="200" height="300" alt="Poster for Crimson Circuit: red neon circuit lines over a dark skyline">
+                <div>
+                    <h2>Crimson Circuit</h2>
+                    <ul class="meta">
+                        <li>Genre: Action</li>
+                        <li>Age rating: <span class="badge">MA15+</span></li>
+                        <li>Running time: 2 hr 11 min</li>
+                        <li>Ticket price: $19.00</li>
+                    </ul>
+                    <p>A burned-out security analyst discovers that the towers she protects are being rewired for a heist worth billions. With her badge revoked and every camera watching, she must outsmart a ruthless crew in a neon-lit city. Crimson Circuit delivers tense chases, sharp twists and a relentless pace for viewers who like their action intense.</p>
+                    <p><strong>Sessions:</strong> Fri 9:15 PM, Sat 9:00 PM, Sun 8:00 PM</p>
+                    <div class="actions">
+                        <a class="btn" href="booking.html?movie=m5">Book Crimson Circuit</a>
+                        <button type="button" class="btn secondary watch-btn" data-id="m5" aria-pressed="false">Add to watchlist</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie" id="m6">
+                <img src="images/movie6.jpg" width="200" height="300" alt="Poster for Stargazers Club: five children looking at a sky full of stars">
+                <div>
+                    <h2>Stargazers Club</h2>
+                    <ul class="meta">
+                        <li>Genre: Animation</li>
+                        <li>Age rating: <span class="badge">PG</span></li>
+                        <li>Running time: 1 hr 39 min</li>
+                        <li>Ticket price: $15.00</li>
+                    </ul>
+                    <p>Five friends at a countryside observatory camp discover a lost star map that leads to a hidden valley of glowing creatures. Together they must solve riddles, share their fears and return the map before dawn. Stargazers Club is a warm, funny animated adventure with sing-along moments that families and friends can enjoy together.</p>
+                    <p><strong>Sessions:</strong> Sat 11:30 AM, Sat 3:00 PM, Sun 1:00 PM</p>
+                    <div class="actions">
+                        <a class="btn" href="booking.html?movie=m6">Book Stargazers Club</a>
+                        <button type="button" class="btn secondary watch-btn" data-id="m6" aria-pressed="false">Add to watchlist</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer>
+        <p>&copy; 2026 CineHub. Student project for COS10005 Web Development, Swinburne University of Technology.</p>
+        <p><a href="movies.html">Browse movies</a> | <a href="booking.html">Book tickets</a></p>
+    </footer>
+</body>
+</html>
